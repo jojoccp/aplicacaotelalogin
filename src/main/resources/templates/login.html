@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Jojo</title>
+</head>
+
+<body>
+    <form name="f" th:action="@{/login}" method="POST">
+        <fieldset>
+            <legend>Jônatas - Página de login</legend>
+            <div th:if="${param.error}" class="alert alert-error">
+                Usuário e senha inválidos.
+            </div>
+            <div th:if="${param.logout}" th:href="@{/success}" class="alert alert-sucess">
+                Sucesso!
+            </div>
+            <label for="username">Usuário</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Senha:</label>
+            <input type="password" name="password" id="password">
+            <div class="form-actions">
+                <button type="submit" class="btn">Log in</button>
+            </div>
+
+
+
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
